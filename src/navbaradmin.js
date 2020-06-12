@@ -1,9 +1,20 @@
 import React, { Component } from "react"
 import { Navbar, Nav, FormControl, Form, Button } from "react-bootstrap"
-import { NavLink } from "react-router-dom"
+import { NavLink,Link } from "react-router-dom"
 
 
 class navbar extends Component {
+    constructor(){
+        super();
+        this.clickhandler = this.clickhandler.bind(this)
+    }
+    
+    clickhandler(){
+        localStorage.removeItem('tok')
+        
+    }
+   
+   
     render() {
         return (
             <div>
@@ -25,6 +36,7 @@ class navbar extends Component {
                         </div>
 
                     </div>
+                    <Link to='/' className="btn btn-danger" onClick={this.clickhandler}  style={{width:60,height:25,fontSize:12}}>Logout</Link>
                 </nav>
             </div>
         )

@@ -1,9 +1,21 @@
 import React, { Component } from "react"
 import { Navbar, Nav, FormControl, Form, Button } from "react-bootstrap"
-import { NavLink } from "react-router-dom"
+import { NavLink,Link } from "react-router-dom"
+import logo from './logo2.png'
 
 
 class navBar extends Component {
+  constructor(){
+    super();
+    this.clickhandler = this.clickhandler.bind(this)
+}
+
+clickhandler(){
+    localStorage.removeItem('tok')
+    
+}
+  
+  
   render() {
     return (
       <div>
@@ -17,13 +29,18 @@ class navBar extends Component {
 
 
 
-          <a className="navbar-brand text-white text-uppercase" href="/">TUTORBOOK</a>
-          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
+        <a class="navbar-brand" href="/">
+      <div class="logo-image" style={{width: 46,
+    height: 46,
+    borderRadius: "100%",
+    marginTop: -4}}>
+          <img src={logo} class="logo.jpg" />
+      <a style={{color:"#3C4CF3"}}>&nbsp;TUTORBOOK</a>       
+      </div>
+</a>
 
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav m-auto">
+            <ul className="navbar-nav m-auto" style={{fontSize:13}}>
               <li className="nav-item active">
                 <a className="nav-link text-white text-uppercase ml-5" href="/">Home <span className="sr-only">(current)</span></a>
               </li>
@@ -37,11 +54,9 @@ class navBar extends Component {
               </li>
 
             </ul>
-            <form className="form-inline my-2 my-lg-0">
-              <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-              <button className="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
-            </form>
+            
           </div>
+          <Link to='/' className="btn btn-danger" onClick={this.clickhandler}  style={{width:60,height:25,fontSize:12}}>Logout</Link> 
         </nav>
       </div>
     )

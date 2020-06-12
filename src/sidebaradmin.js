@@ -11,8 +11,8 @@ class SideBar extends Component{
             <div class="sidenav">
     <Link to='/useradmin'>USERS</Link>
     <Link to='/bookingadmin'>Bookings</Link>
-    <a href="#clients">Clients</a>
-    <a href="#contact">Contact</a>
+    <a href="/tutionapproval">Tution Approval</a>
+    <a href='/bookingapproval'>Booking Approval</a>
     </div>
             </div>
         )

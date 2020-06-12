@@ -47,7 +47,7 @@ class Profile extends Component {
 
             <div>
                 <NavBar />
-                <div className="container" style={{ width: 800, height: 420, border: "1px solid black", borderRadius: 25, font:16 }}>
+                <div className="container" style={{ width: 800, height: 490, border: "1px solid black", borderRadius: 25 }}>
                     <br />
                     <h1>Profile</h1>
                     <hr style={{ borderRadius: 20, backgroundColor: "#514F62" }} />
@@ -55,24 +55,24 @@ class Profile extends Component {
                     {this.state.user.map(element => {
 
                         return (
-                            <ul style={{ listStyle: "none",font:16 }}>
+                            <ul style={{ listStyle: "none" }}>
 
                                 <br />
-                                <h5>Name</h5>
-                                <li key={element.user_id}>{element.fullname}</li>
+                                <h4>Name</h4>
+                                <li style={{fontSize:15}} key={element.user_id}>{element.fullname}</li>
                                 <hr />
 
-                                <h5 >Email</h5>
-                                <li>{element.email}</li>
+                                <h4>Email</h4>
+                                <li style={{fontSize:15}}>{element.email}</li>
                                 <hr />
-                                <h5>Contact</h5>
-                                <li>{element.contact}</li>
+                                <h4>Contact</h4>
+                                <li style={{fontSize:15}}>{element.contact}</li>
                                 <hr />
-                                <h5>Qualification</h5>
-                                <li>{element.qualification}</li>
+                                <h4>Qualification</h4>
+                                <li style={{fontSize:15}}>{element.qualification}</li>
                                 <hr />
-                                <h5>Area</h5>
-                                <li>{element.area}</li>
+                                <h4>Area</h4>
+                                <li style={{fontSize:15}}>{element.area}</li>
                                 <br />
                                 <Link to="/editprofile" className="btn btn-primary" style={{ fontSize:16,padding: "15px 32px",backgroundColor: "#f44336",textAlign: "center", display: "table", margin: "0 auto" }}>edit Profile</Link>
 
@@ -88,7 +88,7 @@ class Profile extends Component {
 
 
                 </div>
-                <Footer />
+                
             </div>
         )
     }

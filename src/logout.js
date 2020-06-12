@@ -12,7 +12,7 @@ class Logout extends Component{
     }
     render(){
         return(
-            <button type = 'button' onClick={this.clickhandler}>Logout</button>        
+            <button type = 'btn btn-primary' variant="danger" onClick={this.clickhandler}>Logout</button>        
         )
     }
 }

@@ -17,9 +17,15 @@ import AdminPanel from "./adminpanel.js"
 import UserAdmin from "./useradmin.js"
 import BookingAdmin from "./bookingadmin.js"
 import Booking1 from "./booking1.js"
+import TutionApproval from "./tutionaproval.js"
+import BookingApproval from "./bookingapproval.js"
+import BookingApprove from "./bookingapprove.js"
+
 
 import * as ReactBootstrap from "react-bootstrap"
 import "bootstrap/dist/css/bootstrap.min.css"
+
+
 
 import Profile from "./profile.js"
 class App extends Component {
@@ -49,6 +55,9 @@ class App extends Component {
             <Route path='/useradmin' exact component={UserAdmin} />
             <Route path='/bookingadmin' exact component={BookingAdmin} />
             <Route path='/booking1/:id' exact component={Booking1} />
+            <Route path='/tutionapproval' exact component={TutionApproval} />
+            <Route path='/bookingapproval' exact component={BookingApproval} />
+            <Route path='/bookingapprove/:id' exact component={BookingApprove} />
           </Switch>
           
         </Router>

@@ -9,12 +9,15 @@ class editProfile extends Component {
     this.state = {
       fullname: "",
       email: "",
-      password: ""
+      password: "",
+      user:[]
 
     }
     this.changehandler = this.changehandler.bind(this);
     this.submithandler = this.submithandler.bind(this);
+    
   }
+  
 
   async submithandler(event) {
     event.preventDefault();
@@ -50,6 +53,29 @@ class editProfile extends Component {
     })
   }
 
+  componentDidMount() {
+    fetch(`http://localhost:4000/profiles`, {
+        method: 'get',
+        headers: new Headers({ 'Content-Type': 'applications/json', 'authorization': localStorage.getItem('tok') })
+    })
+
+        .then(response => response.json())
+        .then(data => {
+            this.setState({
+                user: data
+            })
+
+        })
+
+    if (localStorage.getItem('tok') !== 'undefined' && localStorage.getItem('tok')) {
+
+    }
+    else {
+        this.props.history.push('/')
+    }
+
+}
+
 
 
 
@@ -67,19 +93,23 @@ class editProfile extends Component {
             <div class="col-md-9 personal-info">
 
               <h3>Personal info</h3>
-
-              <form class="form-horizontal" role="form">
+              <br />
+              {this.state.user.map(arr =>{
+                return(
+                  
+               
+              <form class="form-horizontal" role="form" style={{fontSize:14}}>
                 <div class="form-group">
                   <label class="col-lg-3 control-label">Full name:</label>
-                  <div class="col-lg-8">
-                    <input class="form-control" type="text" value={this.state.fullname} onChange={this.changehandler("fullname")} />
+                  <div class="col-lg-8" >
+                    <input key={arr.user_id} style={{fontSize:14}} class="form-control" type="text"  defaultValue={arr.fullname} onChange={this.changehandler("fullname")} />
                   </div>
                 </div>
 
                 <div class="form-group">
                   <label class="col-lg-3 control-label">Email:</label>
                   <div class="col-lg-8">
-                    <input class="form-control" type="text" value={this.state.email} onChange={this.changehandler("email")} />
+                    <input class="form-control" style={{fontSize:14}} type="text" defaultValue={arr.email} onChange={this.changehandler("email")} />
                   </div>
                 </div>
 
@@ -87,58 +117,62 @@ class editProfile extends Component {
                 <div class="form-group">
                   <label class="col-md-3 control-label">Password:</label>
                   <div class="col-md-8">
-                    <input class="form-control" type="password" value={this.state.password} onChange={this.changehandler("password")} />
+                    <input class="form-control" style={{fontSize:14}} type="password" value={this.state.password} onChange={this.changehandler("password")} />
                   </div>
                 </div>
 
                 <div class="form-group">
                   <label class="col-md-3 control-label">Contact:</label>
                   <div class="col-md-8">
-                    <input class="form-control" type="contact" value={this.state.contact} onChange={this.changehandler("contact")} />
+                    <input class="form-control" style={{fontSize:14}} type="contact" defaultValue={arr.contact} onChange={this.changehandler("contact")} />
                   </div>
                 </div>
 
                 <div class="form-group">
                   <label class="col-md-3 control-label">Qualification:</label>
                   <div class="col-md-8">
-                    <input class="form-control" value={this.state.qualification} onChange={this.changehandler("qualification")} />
+                    <input class="form-control" style={{fontSize:14}} defaultValue={arr.qualification} onChange={this.changehandler("qualification")} />
                   </div>
                 </div>
 
                 <div class="form-group">
                   <label class="col-md-3 control-label">Charge:</label>
                   <div class="col-md-8">
-                    <input class="form-control" value={this.state.charge} onChange={this.changehandler("charge")} />
+                    <input class="form-control" style={{fontSize:14}} defaultValue={arr.charge} onChange={this.changehandler("fee")} />
                   </div>
                 </div>
 
                 <div class="form-group">
                   <label class="col-md-3 control-label">City:</label>
                   <div class="col-md-8">
-                    <input class="form-control" value={this.state.city} onChange={this.changehandler("city")} />
+                    <input class="form-control" style={{fontSize:14}} defaultValue={arr.city} onChange={this.changehandler("city")} />
                   </div>
                 </div>
 
                 <div class="form-group">
                   <label class="col-md-3 control-label">Area:</label>
                   <div class="col-md-8">
-                    <input class="form-control" value={this.state.area} onChange={this.changehandler("area")} />
+                    <input class="form-control" style={{fontSize:14}} defaultValue={arr.area} onChange={this.changehandler("area")} />
                   </div>
                 </div>
-
+                <br />
                 <div class="form-group">
                   <label class="col-md-3 control-label"></label>
                   <div class="col-md-8">
-                    <Link to="/profile" type="button" class="btn btn-primary" onClick={this.submithandler} >Save Changes </Link>
-                    <Link to="/profile" type="reset" class="btn btn-default" value="Cancel">Cancel</Link>
+                    <Link to="/profile" style={{fontSize:14}} type="button" class="btn btn-primary" onClick={this.submithandler} >Save Changes </Link>
+                    <Link to="/profile"  style={{fontSize:14}} type="reset" class="btn btn-default" value="Cancel">Cancel</Link>
                   </div>
+                  
                 </div>
               </form>
+ 
+               )
+              })}
             </div>
           </div>
         </div>
 
-        <Footer />
+       
 
       </div>
 

@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { Link } from "react-router-dom"
 import "bootstrap/dist/css/bootstrap.min.css"
-import NavBar from "./navbar.js"
+import NavBar from "./navbar2.js"
 import Footer from "./footer.js"
 
 function Home() {
@@ -17,7 +17,7 @@ function Home() {
                 <button>signup</button>
             </Link>
 
-            <Footer />
+           
 
 
         </div>
