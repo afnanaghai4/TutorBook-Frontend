@@ -29,7 +29,7 @@ class Profile extends Component {
 
             })
 
-        if (localStorage.getItem('tok') !== 'undefined' && localStorage.getItem('tok')) {
+        if (localStorage.getItem('tok') !== 'undefined' && localStorage.getItem('tok') && localStorage.getItem('type') == "customer") {
 
         }
         else {

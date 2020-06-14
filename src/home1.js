@@ -15,6 +15,13 @@ class Home1 extends Component{
         }
         else if((localStorage.getItem('tok')) && 
         (localStorage.getItem('tok') !== 'undefined') &&
+        localStorage.getItem('type') == "finder"){
+            return(
+                <Redirect to= '/dashboardfinder'/>
+            )
+        }
+        else if((localStorage.getItem('tok')) && 
+        (localStorage.getItem('tok') !== 'undefined') &&
         localStorage.getItem('type') == "admin"){
             return(
                 <Redirect to= '/adminpanel'/>

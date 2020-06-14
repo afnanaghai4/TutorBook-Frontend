@@ -20,7 +20,12 @@ import Booking1 from "./booking1.js"
 import TutionApproval from "./tutionaproval.js"
 import BookingApproval from "./bookingapproval.js"
 import BookingApprove from "./bookingapprove.js"
-
+import DashBoard2 from './dashboard2.js'
+import TutorDetails from './tutordetails.js'
+import Requests from "./requests.js"
+import TutionDisplay from "./tutiondisplay.js"
+import TutionForm from "./tutionform.js"
+import SignUp from "./signup2.js"
 
 import * as ReactBootstrap from "react-bootstrap"
 import "bootstrap/dist/css/bootstrap.min.css"
@@ -43,7 +48,8 @@ class App extends Component {
           <Switch>
             <Route path="/" exact component={Home1} />
             <Route path='/login' exact component={LoginForm} />
-            <Route path='/signup' exact component={Template} />
+            <Route path='/signupfinder' exact component={SignUp} />
+            <Route path='/signuptutor' exact component={Template} />
             <Route path='/dashboard' exact component={DashBoard} />
             <Route path='/Modal' exact component={Modal} />
             <Route path='/profile' exact component={Profile} />
@@ -58,6 +64,11 @@ class App extends Component {
             <Route path='/tutionapproval' exact component={TutionApproval} />
             <Route path='/bookingapproval' exact component={BookingApproval} />
             <Route path='/bookingapprove/:id' exact component={BookingApprove} />
+            <Route path='/dashboardfinder' exact component={DashBoard2} />
+            <Route path='/tutordetails/:id' exact component={TutorDetails} />
+            <Route path='/requests' exact component={Requests} />
+            <Route path='/tutiondisplay' exact component={TutionDisplay} />
+            <Route path='/tutionform' exact component={TutionForm} />
           </Switch>
           
         </Router>

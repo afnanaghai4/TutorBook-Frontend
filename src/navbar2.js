@@ -1,9 +1,10 @@
 import React, { Component } from "react"
 import { Navbar, Nav, FormControl, Form, Button } from "react-bootstrap"
-import { NavLink } from "react-router-dom"
+import { NavLink,Link} from "react-router-dom"
 import logo from './logo2.png'
 import LogOut from "./logout.js"
 import Logout from "./logout.js"
+
 
 class navBar extends Component {
   render() {
@@ -25,7 +26,7 @@ class navBar extends Component {
     borderRadius: "100%",
     marginTop: -4}}>
             <img src={logo} class="logo.jpg" />
-            <a style={{color:"#3C4CF3"}}>&nbsp;TUTORBOOK</a>
+            <a style={{color:"white",fontStyle:"italic",position:"absolute",left:6,bottom:3}}>&nbsp;TUTORBOOK</a>
       </div>
 </a>
 
@@ -46,6 +47,11 @@ class navBar extends Component {
             </ul>
             
           </div>
+
+          <Link to="/login">
+                <Button variant="Dark" style={{color:"white",fontSize:15}}>
+                    <span className="glyphicon glyphicon-log-in"></span>  Login</Button>
+            </Link>
           
         </nav>
       </div>

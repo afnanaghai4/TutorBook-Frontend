@@ -20,7 +20,7 @@ class Template extends Component{
 
 
     submithandler(){
-        fetch('http://localhost:4000/signup',{
+        fetch('http://localhost:4000/signuptutor',{
             method: 'post',
             headers: {'Content-Type': 'application/json', 'accept': "application/json"},
             body: JSON.stringify({
@@ -30,7 +30,7 @@ class Template extends Component{
                 "qualification":this.state.qualification,
                 "area":this.state.area,
                 "contact": this.state.contact,
-                "role_id":this.state.role_id
+                
             })
         })
     }
@@ -105,16 +105,15 @@ class Template extends Component{
                                     <input type="tel" class="form-input" name="phoneno" id="phoneno" placeholder="Your contact" value = {this.state.contact} onChange = {this.changehandler("contact")}/>
                                 </div>
                                 
-                                <div class="form-group">
-                                    <input type="number" class="form-input" name="category" id="category" placeholder="Your category" value = {this.state.role_id} onChange = {this.changehandler("role_id")}/>
-                                </div> 
+                                
                                 
                                 
                                 <div class="form-group">
                                     <Link to='/login' className="btn btn-primary" onClick = {this.submithandler}>submit</Link>
                                 </div>
                             </form>
-                            
+                                <p>Already have an Account?</p>
+                                <Link to="login" style={{position:"absolute",bottom:51,right:315}}>Login</Link>
                         </div>
                     </div>
                 </section>
@@ -122,8 +121,8 @@ class Template extends Component{
             </div>
         
            
-            <script src="vendor/jquery/jquery.min.js"></script>
-            <script src="js/main.js"></script>
+            <script src="templatevendor/jquery/jquery.min.js"></script>
+            <script src="template/js/main.js"></script>
         </body>
         
         </div>

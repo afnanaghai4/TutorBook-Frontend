@@ -51,7 +51,7 @@ class modal2 extends Component {
     render() {
         return (
             <div>
-                <Button className="btn btn-primary" style={{ width: "10%",backgroundColor:"#0ABD0F",textAlign:"center" }} onClick={this.showModal}>open modal</Button>
+                <Button className="btn btn-primary" style={{ width: "100%",backgroundColor:"#0ABD0F",textAlign:"center" }} onClick={this.showModal}>Contact Details</Button>
 
                 <Modal isOpen={this.state.isActive}
                     onRequestClose={this.state.isActive}>

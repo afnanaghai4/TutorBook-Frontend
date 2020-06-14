@@ -41,6 +41,13 @@ class LoginForm extends Component {
 			
 				this.props.history.push('/dashboard')
 		}
+	
+		else if (localStorage.getItem('tok') !== 'undefined' &&
+		localStorage.getItem('tok') &&
+		localStorage.getItem("type") == "finder") {
+		
+			this.props.history.push('/dashboardfinder')
+	}
 		else if (localStorage.getItem('tok') !== 'undefined' &&
 		localStorage.getItem('tok') &&
 		localStorage.getItem("type") == "admin") {

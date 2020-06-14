@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import "bootstrap/dist/css/bootstrap.min.css"
 import NavBar from "./navbar2.js"
 import Footer from "./footer.js"
+import Carousel from "./carousal.js"
 
 function Home() {
     return (
@@ -10,15 +11,10 @@ function Home() {
         <div>
             <NavBar />
 
-            <Link to="/login">
-                <button>login</button>
-            </Link>
-            <Link to="/signup">
-                <button>signup</button>
-            </Link>
-
+            
+            
            
-
+            <Carousel />
 
         </div>
     )

@@ -12,6 +12,7 @@ class navBar extends Component {
 
 clickhandler(){
     localStorage.removeItem('tok')
+    localStorage.removeItem('type')
     
 }
   
@@ -35,14 +36,15 @@ clickhandler(){
     borderRadius: "100%",
     marginTop: -4}}>
           <img src={logo} class="logo.jpg" />
-      <a style={{color:"#3C4CF3"}}>&nbsp;TUTORBOOK</a>       
+      <a style={{color:"#3C4CF3",fontFamily:"parkavenue",fontStyle:"italic",position:"absolute",left:6,bottom:6}}>&nbsp;TUTORBOOK</a>       
       </div>
 </a>
 
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav m-auto" style={{fontSize:13}}>
               <li className="nav-item active">
-                <a className="nav-link text-white text-uppercase ml-5" href="/">Home <span className="sr-only">(current)</span></a>
+                <a className="nav-link text-white text-uppercase ml-5" href="/"><span className="glyphicon glyphicon-home" >
+                  </span>Home <span className="sr-only">(current)</span></a>
               </li>
 
               <li className="nav-item">
@@ -56,7 +58,7 @@ clickhandler(){
             </ul>
             
           </div>
-          <Link to='/' className="btn btn-danger" onClick={this.clickhandler}  style={{width:60,height:25,fontSize:12}}>Logout</Link> 
+          <Link to='/' className="btn btn-danger" onClick={this.clickhandler}  style={{width:60,height:25,fontSize:12}}><span className="glyphicon glyphicon-log-out"></span>Logout</Link> 
         </nav>
       </div>
     )
